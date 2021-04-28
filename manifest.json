@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Destiny_Extension/WareHouse",
+  "version": "2.1",
+  "description": "Extension which overlays onto metapack providing enhanced reporting for warehouse operatives",
+  "author": "Kris wold",
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+   "128": "icon128.png" 
+  },
+  "content_scripts": [
+    {
+      
+      "matches": ["https://dm.metapack.com/dm/ActionServlet?action=rapid_print*","https://dm.metapack.com/dm/ActionServlet?action=rapid_print*"],
+      "js": ["jquery-3.5.1.slim.min.js", "metapack.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["start-xxl.png","pause-xxl.png","stop-3-xxl.png","exit-xxl.png"],
+  "permissions": [
+    "storage",
+    "background",
+    "tabs",
+    "activeTab",
+    "identity",
+    "identity.email"
+  ]
+}
